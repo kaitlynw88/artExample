@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ArtItem from "./ArtItem";
+import ArtItem from "../ArtItem/ArtItem";
+import "../Gallery/Gallery.scss"
 const Gallery = (props) => {
     const [artArray, setArtArray]=useState([])
     const [noArt, setNoArt] = useState(false);
@@ -31,24 +32,19 @@ const Gallery = (props) => {
         });
     }, [props.userChoice])
     return (
-        <>
+        <div className="gallery">
             {noArt ? 
-            <>
-                <p>no art, how sad</p>
-            </>
+            <p>... let's find some art!</p>
             :
-            <>
-                <ul>
-                
+            <ul>
                 {
                     artArray.map((artObject)=>{
                         return <ArtItem artObject={artObject} key={artObject.id} length={artArray.length}/>
                     })
                 }
             </ul>
-            </>
             }
-        </>
+        </div>
         
             
         

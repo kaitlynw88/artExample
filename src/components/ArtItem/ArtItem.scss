@@ -1,0 +1,24 @@
+.artItem {
+    border: 2px solid green;
+    border-radius: 5%;
+    margin-bottom: 10px;
+    width: calc((100% / 3) - 10px);
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        &:hover, &:focus{
+            overflow: visible;
+            white-space:inherit;
+        }
+    }
+    img{
+        height:500px;
+    }
+}
