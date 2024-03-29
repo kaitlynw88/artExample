@@ -5,14 +5,41 @@ html { box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
-
+body{
+    font-size: 18px;
+}
+h1,h2,h3{
+    margin:0;
+    padding:0;
+}
 .App{
+    position: relative;
+    min-height: 100vh;
+}
+.nightMode{
+    background-color: #000;
+    color:white;
+}
+.nightModeBtn{
+    background-color:transparent;
+    box-shadow: none;
+    border:none;
+    font-size: 2rem;
+    transition: 0.3s;
+    &:hover, &:focus{
+        font-weight: bold;
+    }
+}
+.wrapper{
     max-width: 1280px;
     width: 95%;
+    height: 100vh;
     margin: 0 auto;
-    min-height:100vh;
-    border:2px solid green;
-    position: relative;
+}
+p, a, form input, form button{
+    font-family: "Prata", serif;
+    font-weight:400;
+    font-size: 1.25rem;
 }
 img{
     object-fit: cover;
@@ -26,14 +53,52 @@ ul{
     li{
         list-style: none;
     }
+}
+header{
+    background-color: white;
+    border-bottom: 3px solid rgb(136, 136, 248);
+    h1{
+        font-family: "Elsie", serif;
+        font-weight: 400;
+        font-size: 3.25rem;
+        font-style: italic;
+        margin-left: 30px;
+        padding:10px 0;
+    }
 } 
 
-footer{
-    position: relative;
+form{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    margin: 20px 0;
+    select{
+        margin-bottom: 10px;
+        padding:10px 2px;
+    }
+    button{
+        box-shadow: none;
+        border:none;
+        padding:10px;
+        border-radius: 0.5rem;
+        background-color:rgb(136, 136, 248);
+        transition:0.3s;
+        &:hover, &:focus{
+            background-color: rgb(34, 34, 92);
+            color:white;
+        }
+    }
+}
+
+footer {
+    position: fixed;
     bottom:0;
-    width:100%;
+    left:0;
+    width: 100%;
     border-top: 3px solid grey;
-    p{
+    background-color: white;
+    p {
+        font-size: 0.8rem;
         text-align: center;
     }
 }

@@ -1,11 +1,19 @@
 import React from 'react'
 
-function Header() {
+function Header(props) {
   return (
-    <div>
-        <h1>ArtFinder</h1>
-    </div>
-  )
+      <header
+          className={
+        props.nightMode
+        ?
+        "nightMode"
+        :
+        ""
+      }
+      >
+          <h1>ArtFinder</h1>
+      </header>
+  );
 }
 
 export default Header
