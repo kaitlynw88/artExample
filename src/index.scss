@@ -20,21 +20,76 @@ h1,h2,h3{
     background-color: #000;
     color:white;
 }
-.nightModeBtn{
-    background-color:transparent;
-    box-shadow: none;
-    border:none;
-    font-size: 2rem;
-    transition: 0.3s;
-    &:hover, &:focus{
-        font-weight: bold;
+
+.container{
+    padding-top: 20px;
+    display:flex;
+    justify-content: flex-end;
+    .switchContainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:140px;
+        .toggleIcon{
+            font-size: 2rem;
+        }
+        .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+        
+                .sliderRound {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-color: #ccc;
+                    transition: 0.3s;
+                    border-radius: 34px;
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        border-radius: 50%;
+                        transition:0.3s;
+                    }
+                    &:focus,
+                    &:hover {
+                        box-shadow: 0 0 1px #2196F3;
+                    }
+                }
+                input:checked + .sliderTranslate {
+                    background-color: #2196f3;
+                    &:before{
+                        transform: translateX(26px);
+                    }
+                }
+            }
+        
     }
 }
+
+
+
+
 .wrapper{
     max-width: 1280px;
     width: 95%;
-    height: 100vh;
+    min-height:80vh;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 p, a, form input, form button{
     font-family: "Prata", serif;
@@ -56,7 +111,7 @@ ul{
 }
 header{
     background-color: white;
-    border-bottom: 3px solid rgb(136, 136, 248);
+    border-bottom: 3px solid #8DA9C4;
     h1{
         font-family: "Elsie", serif;
         font-weight: 400;
@@ -81,22 +136,20 @@ form{
         border:none;
         padding:10px;
         border-radius: 0.5rem;
-        background-color:rgb(136, 136, 248);
+        background-color:#8DA9C4;
         transition:0.3s;
         &:hover, &:focus{
-            background-color: rgb(34, 34, 92);
+            background-color: #13315c;
             color:white;
         }
     }
 }
 
 footer {
-    position: fixed;
-    bottom:0;
-    left:0;
     width: 100%;
     border-top: 3px solid grey;
     background-color: white;
+    padding-bottom: 20px;
     p {
         font-size: 0.8rem;
         text-align: center;

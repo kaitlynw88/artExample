@@ -28,15 +28,26 @@ function App() {
   }
 
   return (
-      <div className={
-        nightMode
-        ?
-        "nightMode"
-        :
-        "App"
-      }>
-          <Header nightMode={nightMode}/>
+      <div className={nightMode ? "App nightMode" : "App"}>
+          <Header nightMode={nightMode} />
           <div className="wrapper">
+            <div className='container'>
+              <div className="switchContainer">
+                  <FontAwesomeIcon className="toggleIcon" icon={faSun} />
+                  <label className="switch">
+                      <input type="checkbox" onClick={handleNightMode} />
+                      <span
+                          className={
+                              nightMode
+                                  ? "sliderRound sliderTranslate"
+                                  : "sliderRound"
+                          }
+                      ></span>
+                  </label>
+                  <FontAwesomeIcon className="toggleIcon" icon={faMoon} />
+              </div>
+            </div>
+
               <form onSubmit={submit}>
                   <select onChange={handleSelect} value={userSelection}>
                       <option value="">Please select</option>
@@ -45,21 +56,10 @@ function App() {
                   </select>
                   <button type="submit">Go!</button>
               </form>
-              <button className="nightModeBtn" onClick={handleNightMode}>
-                {nightMode 
-                ? 
-                <>
-                  <FontAwesomeIcon className="nightMode" icon={faSun} />
-                </>
-                :
-                <FontAwesomeIcon icon={faMoon} />
-                }
-              </button>
-
 
               <Gallery userChoice={buttonSelect} />
-              <Footer nightMode={nightMode}/>
           </div>
+          <Footer nightMode={nightMode} />
       </div>
   );
 

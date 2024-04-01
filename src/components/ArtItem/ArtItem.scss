@@ -1,5 +1,5 @@
 .artItem {
-    background-color:rgb(136, 136, 248);
+    background-color:#8DA9C4;
     border-radius: 5%;
     margin-bottom: 10px;
     width: calc((100% / 3) - 10px);
@@ -8,11 +8,12 @@
     flex-direction: column;
     justify-content: center;
     h2{
-        margin-bottom: 10px;
-        font-size: 1.25rem;
+        margin: 10px;
+        font-size: 1.5rem;
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
+        color:black;
         &:hover, &:focus{
             overflow: visible;
             white-space:inherit;
